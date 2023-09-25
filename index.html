@@ -1,12 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-style-type" content="text/css">
+	<title>Lao - Japanese</title>
+		
+	<!-- Bootstrap core CSS -->
+	<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" charset="utf-8">
+	<!-- custom CSS -->
+ 	<!-- <link rel="stylesheet" href="CSS/style.css" type="text/css" media="all" title="" charset="utf-8"/> -->
+ 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao&family=Noto+Serif+Lao:wght@300&display=swap" rel="stylesheet">
+
+	<script>
+		(function (w, doc,co) {
+			// http://stackoverflow.com/questions/901115/get-query-string-values-in-javascript
+			var u = {},
+				e,
+				a = /\+/g,  // Regex for replacing addition symbol with a space
+				r = /([^&=]+)=?([^&]*)/g,
+				d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+				q = w.location.search.substring(1),
+				v = '2.0.3';
+
+			while (e = r.exec(q)) {
+				u[d(e[1])] = d(e[2]);
+			}
+			
+			if (!!u.jquery) {
+				v = u.jquery;
+			}	
+
+//			doc.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/'+v+'/jquery.min.js">' + "<" + '/' + 'script>');
+			doc.write('<script src="src/jquery.min.js">' + "<" + '/' + 'script>');
+			co.log('\nLoading jQuery v' + v + '\n');
+		})(window, document, console);
+		</script>
+		
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script-->
+		<script src="src/jquery.quicksearch.js"></script>
+		<script>
+			$(function () {
+
+				var qs = $('input#id_search_list').quicksearch('ul#list_example li');
+				
+				// $.ajax({
+				// 	'url': '../src/example.json',
+				// 	'type': 'GET',
+				// 	'dataType': 'json',
+				// 	'success': function (data) {
+				// 		for (i in data['list_items']) {
+				// 			$('ul#list_example').append('<li>' + data['list_items'][i] + '</li>');
+				// 		}
+				// 		qs.cache();
+				// 	}
+				// });
+				
+				$('input#add_to_list').click(function () {
+					$('ul#list_example').append('<li>Added on click</li>');
+					qs.cache();
+				});
+			});
+
+	</script>
+
 </head>
-<body>
-	<h1>Hello World</h1>
-	<p>I'm hosted with GitHub Pages.</p>
+<body class="d-flex flex-column h-100">
+<header>
+    
+</header>
+<main class="flex-shrink-0">
+	<div class="container">
+
+		<h2>Search all with Lao and Japanese</h2>
+       	<form class="d-flex" action="#">
+       		<div class="col-sm-7">
+            	<input class="form-control me-2 " name="search" type="search" placeholder="Search" aria-label="Search" value="" id="id_search_list">
+        	</div>
+        </form>
+
+		<ul id="list_example" style="font-family: Noto Sans Lao;">
+				<br>
+				<li><font size="3">景観　ທັດສະນີຍະພາບ</font></li>
+				<li><font size="3">促進　ຊຸກຍູ້</font></li>
+				<li><font size="3">推進　ສົ່ງເສີມ</font></li>
+				<li><font size="3">振興　ສົ່ງເສີມ(ການຄ້າ)</font></li>
+				<li><font size="3">有機物　ທາດອົງຄະທາດ (organic)</font></li>
+				<li><font size="3">無機物　ທາດອະນົງຄະທາດ (inorganic)</font></li>
+				<li><font size="3">セメント　ປູນຊີມັງ (Cement)</font></li>		
+				<li><font size="3">セメントペースト　ປູນຊີມັງປະສົມກັບນໍ້າ (Cement paste)</font></li>
+				<li><font size="3">モルタル　ປູນຊີມັງປະສົມກັບນໍ້າປະສົມກັບຊາຍ (Mortar)</font></li>
+				<li><font size="3">コンクリート　ປູນຊີມັງປະສົມກັບນໍ້າປະສົມກັບຊາຍປະສົມກັບຫີນ (Concrete)</font></li>
+				
+				<li><font size="3">蛇行　ແລວຄົດລ້ຽວ</font></li>
+				<li><font size="3">水平方向　ແນວຮາບພຽງ</font></li>
+				<li><font size="3">鉛直方向　ແນວດິ່ງ</font></li>
+				<li><font size="3">ジャッキ　ແມ່ແຮງ</font></li>
+				<li><font size="3">勾配　ຄວາມຊັນຊົນລະສາດ</font></li>
+				<li><font size="3">管路の始点　ຈຸດເລີ່ມຕົ້ນຂອງສາຍທໍ່</font></li>
+				<li><font size="3">管路の分岐点　ຈຸດແຍກທໍ່</font></li>
+				<li><font size="3">管路の交差部　ຈຸດຕັດຜ່ານກັນ</font></li>
+				<li><font size="3">水管橋・伏越部の両端　ທັງສອງສົ້ນຂອງສ່ວນທີ່ລອດ ແລະ ຂ້າມ</font></li>
+				<li><font size="3">排水管の分岐部付近　ຈຸດຢູ່ໃກ້ກັບບ່ອນຍ້າຍຂອງທໍ່ລະບາຍນໍ້າ</font></li>
+				<li><font size="3">バイパス弁　ປະຕູນໍ້າເວັ້ນ(bypass vavle)</font></li>
+				<li><font size="3">都市管理事務所　ຫ້ອງການ ຄຸ້ມຄອງ ແລະ ບໍລິຫານຕົວເມືອງ(ຫ້ອງການ ຄບຕ)</font></li>
+				<li><font size="3">都市開発事務所　ອົງການພັດທະນາ ແລະ ບໍລິຫານຕົວເມືອງ (ອພບຕ)</font></li>
+				<li><font size="3">MPWT内の関係局　ບັນດາກົມກອງອ້ອມຂ້າງກະຊວງ ຍທຂ</font></li>
+				<li><font size="3">関係省庁　ກະຊວງທີ່ກ່ຽວຂ້ອງ</font></li>
+				<li><font size="3">大変光栄と存じます　ຂ້າພະເຈົ້າຮູ້ສຶກເປັນກຽດ ແລະ ພາກພູມໃຈເປັນຢ່າງຍິ່ງ</font></li>
+				<li><font size="3">意味・意義のある、重要な会議　ກອງປະຊຸມທີ່ມີຄວາມໝາຍຄວາມສຳຄັນ.</font></li>
+				<li><font size="3">国家社会経済開発計画　ແຜນພັດທະນາເສດຖະກິດ-ສັງຄົມແຫ່ງຊາດ</font></li>
+				<li><font size="3">ラオス国革命党の第10回の大会　ກອງປະຊຸມໃຫຍ່ ຄັ້ງທີ X ຂອງພັກປະຊາຊົນປະຕິວັດລາວ</font></li>
+				<li><font size="3">グリーンの方針で持続可能な発展をさせる　ຕາມທິດສີຂຽວ ແລະ ຍືນຍົງ</font></li>
+				<li><font size="3">開発計画の方針・達成ターゲットの設定　ກຳນົດທິດທາງ ແລະ ຄາດໝາຍສູ້ຊົນຂອງແຜນພັດທະນາ</font></li>
+				<li><font size="3">85％の人口が清潔・安全な水道水使用へアクセスできる　ໃຫ້ປະຊາຊົນໄດ້ຊົມໃຊ້ນ້ຳປະປາ ທີ່ສະອາດ ປອດໄພ 85%</font></li>
+				<li><font size="3">95％の人口が十分にトイレ及び衛生へのアクセスが可能で、屋外での排泄をなくす　95% ໃຫ້ປະຊາຊົນ ສາມາດເຂົ້າເຖິງວິດຖ່າຍ ແລະ ສຸຂະອະນາໄມຢ່າງພຽງພໍ ແລະ ຍຸດຕິການຖ່າຍແບບຊະຊາຍ</font></li>
+				<li><font size="3">持続可能な開発目標　ເປົ້າໝາຍ ການພັດທະນາແບບຍືນຍົງ</font></li>
+				<li><font size="3">国連　ອົງການສະຫະປະຊາຊາດ</font></li>
+				<li><font size="3">生活用水の確保、持続可能な水のマネジメント及び皆のための公衆衛生　ຮັບປະກັນໃຫ້ມີນໍ້າໃຊ້ ແລະ ການບໍລິຫານນໍ້າແບບຍືນຍົງ ແລະ ສຸຂະອະນາໄມສຳລັບໝົດທຸກຄົນ</font></li>
+				<li><font size="3">2030年までに、そのような大変な環境に国民の一人も取り残さず　ຮອດປີ 2030 ຈະຕ້ອງບໍ່ປະປ່ອຍໃຫ້ປະຊາຊົນຜູ້ໃດຜູ້ໜຶ່ງຢູ່ເບື້ອງຫຼັງ</font></li>
+				<li><font size="3">水道施設整備　ການກໍ່ສ້າງລະບົບໂຄງລ່າງນໍ້າປະປາ</font></li>
+				<li><font size="3">事業の採算性　ດ້ານທ່າແຮງທາງເສດຖະກິດ</font></li>
+				<li><font size="3">採算性　ທ່າແຮງ</font></li>
+				<li><font size="3">法制度整備　ສ້າງລະບົບການສ້າງນິຕິກໍາ</font></li>
+				<li><font size="3">補助金制度＆業務フロー改善　ລະບົບເງິນຊ່ວຍເຫຼືອຈາກພາກລັດ ແລະ ການປັບປຸງຂັ້ນຕອນປະຕິບັດວຽກ</font></li>
+				<li><font size="3">整理　ຈັດສັນ, ສັງລວມ</font></li>
+				<li><font size="3">法制度リスト　ລາຍການນິຕິກໍາ</font></li>
+				<li><font size="3">補助金制度関連法令　ນິຕິກໍາກ່ຽວກັບ ລະບົບເງິນຊ່ວຍເຫຼືອຈາກພາກລັດ</font></li>
+				<li><font size="3">水道開発基金関連法令　ນິຕິກໍາກ່ຽວກັບ ກອງທຶນພັດທະນານ້ຳປະປາ</font></li>
+				<li><font size="3">水道料金関連法令　ນິຕິກໍາກ່ຽວກັບ ລາຄານ້ຳປະປາ</font></li>
+				<li><font size="3">PPP関連法令　ນິຕິກໍາກ່ຽວກັບ PPP</font></li>
+				<li><font size="3">災害対策気候変動関連法令　ນິຕິກໍາກ່ຽວກັບ ການປ່ຽນແປງສະພາບພູມອາກາດດ້ານມາດຕະການຮັບມືຕໍ່ໄພພິບັດ</font></li>
+				<li><font size="3">技術基準　ມາດຕະຖານເຕັກນິກໂຄງລ່າງ</font></li>
+				<li><font size="3">装置基準　ມາດຕະຖານອຸປະກອນ</font></li>
+				<li><font size="3">地域水道戦略　ຍຸດທະສາດນໍ້າປະປາຂັ້ນທ້ອງຖິ່ນ</font></li>
+				<li><font size="3">水道公衆衛生戦略　ຍຸດທະສາດນໍ້າປະປາ ແລະ ສຸຂາພິບານ</font></li>
+				<li><font size="3">水道事業長期計画　ແຜນການດໍາເນີນທຸລະກິດນໍ້າປະປາ ໄລຍະຍາວ</font></li>
+				<li><font size="3">主体性を持って施設整備を実施する　ເປັນເຈົ້າການໃນການກໍ່ສ້າງພັດທະນາສິ່ງອໍານວຍຄວາມສະດວກ</font></li>
+				<li><font size="3">具体的達成目標　ຄາດໝາຍສູ້ຊົນທີ່ເປັນຮູບປະທໍາ</font></li>
+				<li><font size="3">補助金制度のデザイン　ອອກແບບລະບົບເງິນທຶນຊ່ວຍເຫຼືອ</font></li>
+				<li><font size="3">必要な法制度の整備　ສ້າງລະບົບການສ້າງນິຕິກໍາທີ່ຈໍາເປັນ</font></li>
+				<li><font size="3">資金源の検討・確保　ຄົ້ນຄວ້າດ້ານແຫຼ່ງເງິນທຶນ ແລະ ວິທີການຮັບປະກັນ</font></li>
+				<li><font size="3">補助金制度の創設　ສ້າງລະບົບເງິນຊ່ວຍເຫຼືອຈາກພາກລັດ</font></li>
+				<li><font size="3">行政の能力強化　ສ້າງຄວາມເຂັ້ມແຂງດ້ານການຄຸ້ມຄອງຂອງພາກລັດ</font></li>
+				<li><font size="3">水道公社の能力強化　ສ້າງຄວາມເຂັ້ມແຂງໃຫ້ ນປປ</font></li>
+				<li><font size="3">補助金制度の実証　ສຶກສາ ລະບົບເງິນຊ່ວຍເຫຼືອຈາກພາກລັດ</font></li>
+				<li><font size="3">課題別研修　ການຝຶກອົບຮົມແຍກຕາມຫົວຂໍ້ຂອງຂະແໜງນໍ້າ</font></li>
+				<li><font size="3">(<a href="search/Abbreviation/OIDS.html">OIDS</a>) 制度改善戦略　ຍຸດທະສາດການພັດທະນາການຈັດຕັ້ງໂດຍລວມ</font></li>
+				<li><font size="3">維持管理　ການດໍາເນີນງານ ແລະ ບົວລະບັດຮັກສາ</font></li>
+				<li><font size="3">(<a href="search/Abbreviation/PPP.html">PPP</a>) 民間参入　ການຮ່ວມມືຈາກພາກເອກະຊົນ</font></li>
+				<li><font size="3">給水戸数　ຈໍານວນຄົວເຮືອນໄດ້ຮັບບໍລິການ (ເຮືອນ)</font></li>
+				<li><font size="3">延給水戸数　ຈໍານວນຄົວເຮືອນໄດ້ຮັບບໍລິການໝົດປີຂອງຜົນບວກແຕ່ລະເດືອນ </font></li>
+				<li><font size="3">１戸1か月当たりの平均水量　ປະລິມານນໍ້າສະເລ່ຍໃນໜຶ່ງຄົວເຮືອນໃນ1ເດືອນ</font></li>
+				<li><font size="3">有収水量　ປະລິມານນໍ້າທີ່ຂາຍໄດ້</font></li>
+				<li><font size="3">供給単価（販売単価, 給水単価）　ລາຄາຫົວໜ່ວຍນໍ້າຈໍາໜ່າຍ (ລາຄາຫົວໜ່ວຍນໍ້າຂາຍ, ລາຄາຫົວໜ່ວຍນໍ້າສະໜອງ)</font></li>
+				<li><font size="3">給水収入　ລາຍຮັບຈາກການຂາຍນໍ້າ</font></li>
+				<li><font size="3">有収率増減　ການເພີ້ມຂື້ນຫຼືຫຼຸດລົງຂອງອັດຕາລາຍຮັບ</font></li>
+				<li><font size="3">有収率　ອັດຕາລາຍຮັບ</font></li>
+				<li><font size="3">給水量　ປະລິມານນໍ້າທີ່ໃຫ້ບໍລິການ (ນໍ້າທີ່ສົງອອກຈາກໂຮງງານທັງໝົດ)</font></li>
+				<li><font size="3">自己水源　ນ້ຳທີ່ຜະລິດດ້ວຍໂຮງງານຕົວເອງ</font></li>
+				<li><font size="3">受水量　ນໍ້າທີ່ຊື້ຈາກບໍລິສັດເອກະຊົນ</font></li>
+				<li><font size="3">受水料　ລາຍຈ່າຍຊື້ນ້ຳປະປາທີ່ຮັບເຂົ້າມາ</font></li>
+				<li><font size="3">動力費　ຄ່າໃຊ້ຈ່າຍພະລັງງານ</font></li>
+				<li><font size="3">薬品費　ຄ່າໃຊ້ຈ່າຍສານເຄມີ</font></li>
+				<li><font size="3">物価上昇率　ອັດຕາເພີ່ມຂື້ນຂອງຄ່າຄອງຊິບ</font></li>
+				<li><font size="3">収益的収入　ລາຍຮັບໃນການດຳເນີນທຸລະກິດ</font></li>
+				<li><font size="3">給水収入　ລາຍຮັບຈາກການຂາຍນໍ້າ</font></li>
+				<li><font size="3">受託工事収入　ລາຍຮັບຈາກການຮັບເໝົາກໍ່ສ້າງ</font></li>
+				<li><font size="3">その他雑収入　ລາຍຮັບຍ່ອຍອື່ນໆ</font></li>
+				<li><font size="3">収益的支出　ລາຍຈ່າຍໃນການດຳເນີນທຸລະກິດ</font></li>
+				<li><font size="3">給与費　ຄ່າໃຊ້ຈ່າຍເງິນເດືອນພະນັກງານ</font></li>
+				<li><font size="3">修繕費　ຄ່າສ້ອມແປງ</font></li>
+				<li><font size="3">委託費　ລາຍຈ່າຍໃຫ້ຜູ້ຮັບເໝົາ</font></li>
+				<li><font size="3">その他経費　ຄ່າບໍລິຫານອື່ນໆ</font></li>
+				<li><font size="3">受水費　ຄ່າໃຊ້ຈ່າຍໃນການຊື້ນໍ້າເຂົ້າມາ</font></li>
+				<li><font size="3">減価償却費　ຄ່າຕັດການຫຼຸ້ຍຫຼ້ຽນ</font></li>
+				<li><font size="3">支払利息　ຄ່າຈ່າຍດອກເບຍເງິນກູ້</font></li>
+				<li><font size="3">特別損益　ຄ່າເສຍຫາຍພິເສດຕ່າງໆ</font></li>
+				<li><font size="3">収益税控除前（収益的収支差引）　ກໍາໄລລວມ</font></li>
+				<li><font size="3">法人税（収益有）　ອາກອນກຳໄລ</font></li>
+				<li><font size="3">法人税（収益無）　ອາກອນ (ໃນກໍລະນີບໍ່ມີກໍາໄລ)</font></li>
+				<li><font size="3">配当金（国への配当）　ເງິນປັນຜົນໃຫ້ລັດຖະບານ</font></li>
+				<li><font size="3">税金等合計額　ລວມອາກອນທັງໝົດ</font></li>
+				<li><font size="3">純利益　ກໍາໄລສຸດທິ</font></li>
+				<li><font size="3">資本的収入　ການຮັບເຂົ້າໃນການລົງທືນ</font></li>
+				<li><font size="3">銀行等からの借入金　ເງິນຮັບຈາກການກູ້ຍືມໄລຍະຍາວ</font></li>
+				<li><font size="3">負担金及び寄付金　ເງິນສົມທົບທືນແລະເງິນບໍລິຈາກ</font></li>
+				<li><font size="3">補助金　ເງິນສ່ວນເຫຼືອຈາກລັດຖະບານ</font></li>
+				<li><font size="3">長期貸付返済金　ການຮັບຈາກດອກເບ້ຽເງິນໃຫ້ກູ້ຍືມໄລຍະຍາວ</font></li>
+				<li><font size="3">その他の収入　ເງິນຮັບອື່ນໆ</font></li>
+				<li><font size="3">資本的支出　ການຈ່າຍໃນການລົງທືນ</font></li>
+				<li><font size="3">施設工事費　ຄ່າໃຊ້ຈ່າຍໃນການກໍ່ສ້າງ</font></li>
+				<li><font size="3">配水管工事費　ຄ່າກໍ່ສ້າງວາງທໍ່ແຈກ</font></li>
+				<li><font size="3">負担金工事費　ເງິນສົມທົບທືນຄ່າກໍ່ສ້າງ</font></li>
+				<li><font size="3">浄水場工事費　ຄ່າກໍ່ສ້າງ,ປັບປຸງໂຮງງານນໍ້າປະປາ</font></li>
+				<li><font size="3">その他施設工事費　ຄ່າກໍ່ສ້າງອື່ນໆ</font></li>
+				<li><font size="3">用地費　ຄ່າໃຊ້ຈ່າຍໃນການຊື້ດີນ</font></li>
+				<li><font size="3">固定資産購入費　ການຊື້ຊັບສົມບັດຄົງທີ່</font></li>
+				<li><font size="3">償還金　ຄ່າທົດແທນຄືນຕົ້ນທຶນ</font></li>
+				<li><font size="3">資本的収支計　ລວມການຮັບການຈ່າຍໃນການລົງທືນ</font></li>
+				<li><font size="3">資本的収支不足額　ຈໍານວນເງິນທີ່ບໍ່ພຽງພໍໃນການລົງທືນ</font></li>
+				<li><font size="3">補てん財源　ແຫຼ່ງກອງທືນເພີ່ມເຕີມ</font></li>
+				<li><font size="3">前年度資金残高　ແຫຼ່ງທືນຍົກຍອດມາຈາກປີທີ່ຜ່ານມາ</font></li>
+				<li><font size="3">当年度利益　ກໍາໄລໃນປີ</font></li>
+				<li><font size="3">当年度内部留保資金　ເງິນຫັກຄ່າຫຼຸ້ຍຫ້ຽນໃນປິ</font></li>
+				<li><font size="3">財源過不足額（資金残高）　ແຫຼ່ງຈໍານວນເງິນທືນທີ່ເກີນຫຼືບໍ່ພຽງພໍ</font></li>
+				<li><font size="3">償還額　ຈຳນວນເງິນຈ່າຍຕົ້ນທຶນໜີ້</font></li>
+				<li><font size="3">借入金残高　ຍອດໜີ້ທີ່ຄົງຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">自己水源　ນ້ຳທີ່ຜະລິດດ້ວຍໂຮງງານຕົວເອງ</font></li>
+				<li><font size="3">元金据置期間　ໄລຍະປອດໜີ້</font></li>
+				<li><font size="3">償還期間　ໄລຍະກູ້ຢືມ</font></li>
+				<li><font size="3">貸借対照表　ໃບດຸ່ນດ່ຽງ</font></li>
+				<li><font size="3">営業収益　ລາຍຮັບການຄ້າ</font></li>
+				<li><font size="3">給水収益　ລາຍຮັບຈາການສະໜອງນໍ້າ, ລາຍຮັບຈາກການຂາຍນໍ້າ</font></li>
+				<li><font size="3">受託工事収益　ລາຍຮັບວຽກງານກໍ່ສ້າງ</font></li>
+				<li><font size="3">その他営業収益　ລາຍຮັບການຄ້າອື່ນໆ</font></li>
+				<li><font size="3">水道料金　ຄ່ານໍ້າປະປາ</font></li>
+				<li><font size="3">給水工事収入　ລາຍຮັບກໍ່ສ້າງບ້ວງບໍລິການລູກຄ້າ</font></li>
+				<li><font size="3">維持管理収益　ລາຍຄ່າຄຸ້ມຄອງຮັກສາ</font></li>
+				<li><font size="3">浄水受託収益　ລາຍຮັບການຜະລິດນໍ້າ</font></li>
+				<li><font size="3">材料販売収益　ລາຍຮັບການຂາຍວັດຖຸ</font></li>
+				<li><font size="3">雑収益　ລາຍຮັບຍ່ອຍຕ່າງໆ</font></li>
+				<li><font size="3">受取利息　ລາຍຮັບດອກເບ້ຍ</font></li>
+				<li><font size="3">貸付金利息　ດອກເບ້ຍເງິນຝາກ</font></li>
+				<li><font size="3">営業外収益　ລາຍຮັບນອກການຄ້າ</font></li>
+				<li><font size="3">補助金　ເງິນອຸດນູນ</font></li>
+				<li><font size="3">国庫補助金　ເງິນອູດນູນຈາກຄັງແຫ່ງຊາດ</font></li>
+				<li><font size="3">その他補助金　ເງິນອຸດນູນອື່ນໆ</font></li>
+				<li><font size="3">長期前受金戻入　ເງິນຮັບລ່ວງໜ້າໄລຍະຍາວ</font></li>
+				<li><font size="3">国庫県補助金　ເງິນອຸດນູນຄັງແຂວງ</font></li>
+				<li><font size="3">その他補助金　ເງິນອຸດນູນອື່ນໆ</font></li>
+				<li><font size="3">工事負担金　ເງິນຮັບພິຊອບຄ່າກໍ່ສ້າງ</font></li>
+				<li><font size="3">受贈財産評価額　ມູນຄ່າປະເມີນຊັບສີນທີ່ໄດ້ຮັບ</font></li>
+				<li><font size="3">その他長期前受金　ເງິນຮັບລ່ວງໜ້າໄລຍະຍາວອື່ນໆ</font></li>
+				<li><font size="3">賃貸料　ຄ່າເຊົ່າ</font></li>
+				<li><font size="3">不用品売却収益　ລາຍຮັບການຂາຍເຄື່ອງໃຊ້ທີ່ບໍ່ຕ້ອງການ</font></li>
+				<li><font size="3">寄附金　ເງິນບໍລິຈາກ</font></li>
+				<li><font size="3">固定資産売却益　ລາຍຮັບຈາກການຂາຍຊັບສົມບັດຄົງທີ່</font></li>
+				<li><font size="3">特別利益　ກໍາໄລພິເສດ</font></li>
+				<li><font size="3">過年度損益修正益　ລາຍຮັບປັບແກ້ການໄລ່ລຽນປີທີ່ຜ່ານມາ</font></li>
+				<li><font size="3">為替レート利益　ລາຍຮັບສ່ວນເກີນອັດຕາແລກປ່ຽນ</font></li>
+				<li><font size="3">水道事業収益　ລາຍຮັບທຸລະກິດນໍ້າປະປາ</font></li>
+				<li><font size="3">消費税　ອາກອນມູນຄ່າເພີ່ມ</font></li>
+				<li><font size="3">地方消費税　ອາກອນມູນຄ່າເພີ່ມຂັ້ນທ້ອງຖິ່ນ</font></li>
+				<li><font size="3">借入金利息　ດອກເບ້ຍທັນນະບັດວິສະຫະກິດ</font></li>
+				<li><font size="3">前借金利息　ດອກເບ້ຍຕິດໜີ້ເງິນກູ້ລ່ວງໜ້າ</font></li>
+				<li><font size="3">一時借入金利息　ດອກເບ້ຍເງິນກູ້ຊົ່ວຄາວ</font></li>
+				<li><font size="3">借入金手数料及び取扱費　ຄ່າທໍານຽມເງິນກູ້ແລະຄ່ານໍາໃຊ້</font></li>
+				<li><font size="3">固定資産除却費　ຄ່າໃຊ້ຈ່າຍໃນການລົບລ້າງຊັບສິນຄົງທີ່</font></li>
+				<li><font size="3">税金　ພາສີ, ອາກອນ</font></li>
+				<li><font size="3">法人税　ອາກອນ</font></li>
+				<li><font size="3">営業費用　ລາຍຈ່າຍການຄ້າ</font></li>
+				<li><font size="3">営業外費用　ຄ່າໃຊ້ຈ່າຍນອກວຽກງານການຄ້າ</font></li>
+				<li><font size="3">特別損失　ຄ່າໃຊ້ຈ່າຍເສຍຫາຍພິເສດ</font></li>
+				<li><font size="3">予備費　ຄ່າໃຊ້ຈ່າຍສໍາຮອງໄວ້</font></li>
+				<li><font size="3">減損損失　ຄ່າໃຊ້ຈ່າຍເສຍຫາຍ</font></li>
+				<li><font size="3">過年度損益修正損　ເສຍຫາຍດັດແກ້ຈາກປີກ່ອນ</font></li>
+				<li><font size="3">資産減耗費　ຄ່າຊິ້ນເປືອງຊັບສີນ</font></li>
+				<li><font size="3">雑支出　ລາຍຈ່າຍຍ່ອຍ</font></li>
+				<li><font size="3">消費税　ອາກອນມູນຄ່າເພີ່ມ</font></li>
+				<li><font size="3">地方消費税　ອາກອນມູນຄ່າເພີ່ມຂັ້ນທ້ອງຖິ່ນ</font></li>
+				<li><font size="3">リース支払利息　ຈ່າຍດອກເບ້ຍສີນເຊື່ອ</font></li>
+				<li><font size="3">無形固定資産減価償却費　ຄ່າຫັກຄ່າຫຼຸ້ຍຫ້ຽນຊັບສິນຄົງທີ່ບໍ່ມີຕົວຕົນ</font></li>
+				<li><font size="3">有形固定資産減価償却費　ຄ່າຫັກຄ່າຫຼຸ້ຍຫ້ຽນຊັບສິນຄົງທີ່ມີຕົວຕົນ</font></li>
+				<li><font size="3">特許権　ຄ່າຂື້ນລິກະສິດ</font></li>
+				<li><font size="3">その他引当金繰入　ຄ່າເຂົ້າມາອື່ນໆ</font></li>
+				<li><font size="3">修繕引当金繰入額　ຄ່າເງິນບ້ວງສ້ອມແປງ</font></li>
+				<li><font size="3">賞与引当金繰入額　ຄ່າເງິນບ້ວງໂບນັດສ</font></li>
+				<li><font size="3">貸倒引当金繰入額　ມູນຄ່າເຂົ້າມາໃນບ້ວງໜີ້ເສຍ</font></li>
+				<li><font size="3">製品製造費　ຄ່າການຜະລິດສິງຄ້າ</font></li>
+				<li><font size="3">厚生費　ຄ່າເງິນປີຫຼັງກະສຽນ</font></li>
+				<li><font size="3">食糧費　ຄ່າອາຫານ</font></li>
+				<li><font size="3">交際費　ຄ່າຮັບແຂກ</font></li>
+				<li><font size="3">研修費　ຄ່າຄົ້ນຄ້ວາ</font></li>
+				<li><font size="3">調査研究費　ຄ່າໃຊ້ຈ່າຍສໍາຫຼວດຄົ້ນຄ້ວາ</font></li>
+				<li><font size="3">車両登録料　ຄ່າລົງທະບຽນພາຫານະ</font></li>
+				<li><font size="3">自動車重量税　ພາສີລົດຍົນບັນທຸກ</font></li>
+				<li><font size="3">負担金　ເງິນພັນທະ</font></li>
+				<li><font size="3">保険料　ເງິນປະກັນ</font></li>
+				<li><font size="3">諸謝金　ເງິນຊົມເຊີຍ, ເງິນຍ້ອງຍໍ</font></li>
+				<li><font size="3">補償費　ຄ່າຊົດເຊີຍ</font></li>
+				<li><font size="3">薬品費　ຄ່າສານເຄມີ</font></li>
+				<li><font size="3">動力費　ຄ່າພະລັງງານ</font></li>
+				<li><font size="3">路面復旧費　ຄ່າປັບປຸງເສັ້ນທາງ</font></li>
+				<li><font size="3">材料費　ຄ່າວັດຖຸ</font></li>
+				<li><font size="3">修繕費　ຄ່າສ້ອມແປງ</font></li>
+				<li><font size="3">賃借料　ຄ່າເຊົ່າ</font></li>
+				<li><font size="3">手数料　ຄ່າທໍານຽມ</font></li>
+				<li><font size="3">委託料　ຄ່າສົ່ງວຽກອອກນອກ, ຄ່າຈ້າງຜູ້ຮັບເໝົາ, ລາຍຈ່າຍໃຫ້ຜູ້ຮັບເໝົາ</font></li>
+				<li><font size="3">通信費　ຄ່າສື່ສານ</font></li>
+				<li><font size="3">印刷製本費　ຄ່າສິ່ງພີມ</font></li>
+				<li><font size="3">光熱水費　ຄ່າໄຟຟ້ານໍ້າປະປາເກສ</font></li>
+				<li><font size="3">燃料費　ຄ່ານໍ້າມັນເຊື້ອເພິງ</font></li>
+				<li><font size="3">備消耗品費　ຄ່າເຄື່ອງໃຊ້ຍ່ອຍໃນຫ້ອງການ</font></li>
+				<li><font size="3">被服費　ຄ່່າເສື້ອຜ້າ</font></li>
+				<li><font size="3">報償費　ຄ່າລາງວັນ</font></li>
+				<li><font size="3">退職給与金　ຄ່າບໍາເນັດໃນເວລາກະສຽນ</font></li>
+				<li><font size="3">旅費　ຄ່າເດີນທາງ</font></li>
+				<li><font size="3">社定福利費　ຄ່າປະກັນສັງຄົມທີ່ທາງບໍລິສັດອອກຊ່ວຍ</font></li>
+				<li><font size="3">賃金　ຄ່າຈ້າງ</font></li>
+				<li><font size="3">手当　ເງິນອຸດນູນ</font></li>
+				<li><font size="3">退職給付費　ຄ່າອຸດນຸນກະສຽນວຽກ</font></li>
+				<li><font size="3">給料　ເງິນເດືອນ</font></li>
+				<li><font size="3">水道事業資本的収入　ລາຍຮັບໃນການລົງທຶນວຽກງານນໍ້າປະປາ</font></li>
+				<li><font size="3">借入金　ເງິນກູ້ຢືມ</font></li>
+				<li><font size="3">出資金　ເງິນລົງທຶນ</font></li>
+				<li><font size="3">分担金及び負担金　ເງິນສົມທົບຕ່າງໆ</font></li>
+				<li><font size="3">工事負担金　ເງິນສົມທົບການກໍ່ສ້າງ</font></li>
+				<li><font size="3">共用施設分担金　ເງິນສົມທົບສິ່ງອໍານວຍຄວາມສະດວກຮ່ວມ</font></li>
+				<li><font size="3">受託建設収入　ລາຍຮັບການກໍ່ສ້າງຮັບເໝົາ</font></li>
+				<li><font size="3">保険差益　ກໍາໄລ(ສ່ວນຕ່າງ)ຈາກການຊື້ປະກັນໄພ</font></li>
+				<li><font size="3">固定資産売却代金　ຄ່າຂາຍຄືນຊັບສົມບັດຄົງທີ່</font></li>
+				<li><font size="3">受託金　ເງິນຮັບເໝົາ</font></li>
+				<li><font size="3">基金取崩収入　ລາຍຮັບຫັກເງິນກອງທຶນ</font></li>
+				<li><font size="3">前借金　ເງິນກູ້ຢືມລວງໜ້າ</font></li>
+				<li><font size="3">借換債　ພັນທະບັດຄືນເງິນ (Refunding bonds)</font></li>
+				<li><font size="3">建設改良債　ພັນທະບັດວິສາຫະກິດເພື່ອການກໍ່ສ້າງປັບປຸງ</font></li>
+				<li><font size="3">配水管整備収入　ລາຍຮັບການປັບປຸງທໍ່ແຈກ</font></li>
+				<li><font size="3">基幹施設整備収入　ລາຍຮັບການປັບປຸງສິ່ງອໍານວຍຄວາມສະດວກຫຼັກ</font></li>
+				<li><font size="3">土地　ທີ່ດິນ</font></li>
+				<li><font size="3">借入金償還金　ເງິນຕົ້ນທືນກູ້ຢືມ</font></li>
+				<li><font size="3">銀行償還金　ຕົ້ນທືນໜີ້ທະນາຄານ</font></li>
+				<li><font size="3">その他償還金　ເງິນຕົ້ນທືນເງິນກູ້ອື່ນໆ</font></li>
+				<li><font size="3">収益的収入　ລາຍຮັບທີ່ສ້າງກໍາໄລ</font></li>
+				<li><font size="3">給水収入　ລາຍຮັບຈາກການຂາຍນໍ້າ</font></li>
+				<li><font size="3">収益的収支　ລາຍຮັບລາຍຈ່າຍທີ່ສ້າງກໍາໄລ</font></li>
+				<li><font size="3">収益的支出　ລາຍຈ່າຍທີ່ສ້າງກໍາໄລ</font></li>
+				<li><font size="3">人件費　ຄ່າໃຊ້ຈ່າຍພະນັກງານ</font></li>
+				<li><font size="3">物件費　ຄ່າໃຊ້ຈ່າຍສິ່ງຂອງ</font></li>
+				<li><font size="3">動力費　ຄ່າໃຊ້ຈ່າຍພະລັງງານ</font></li>
+				<li><font size="3">収益的収支差引（税引き前）　ກໍາໄລຂັ້ນຕົ້ນກ່ອນຫັກອາກອນ</font></li>
+				<li><font size="3">税金等合計額　ລວມອາກອນທັງໝົດ</font></li>
+				<li><font size="3">純損益　ກໍາໄລສຸດທິ, ກໍາໄລຂາດທຶນສຸດທິ</font></li>
+				<li><font size="3">当年度純損益　ກໍາໄລສຸດທິໃນປີ</font></li>
+				<li><font size="3">当年度資本的収支差引　ລວມລາຍຮັບລາຍຈ່າຍໃນການລົງທືນໃນປີ</font></li>
+				<li><font size="3">当年度資金収支　ລາຍຮັບລາຍຈ່າຍຂອງເງິນລົງທືນໃນປີ</font></li>
+				<li><font size="3">累積資金残額（正味運転資金額）　ຍອດເຫຼືອຂອງເງິນທືນສະສົມ (ເງິນທືນໝູນວຽນ)</font></li>
+				<li><font size="3">借入金残高　ຍອດໜີ້ຄ້າງຈ່າຍທີ່ມີ</font></li>
+				<li><font size="3">維持管理収益　ລາຍຮັບຄ່າຄຸ້ມຄອງຮັກສາ</font></li>
+				<li><font size="3">寄附金　ເງິນບໍລິຈາກ</font></li>
+				<li><font size="3">固定資産　ຊັບສີນຄົງທີ່</font></li>
+				<li><font size="3">水道事業勘定科目表　ຕາຕະລາງລາຍການບັນຊີທຸລະກິດນໍ້າປະປາ</font></li>
+				<li><font size="3">資産勘定　ບັນຊີຊັບສິນ</font></li>
+				<li><font size="3">立木　ຕົ້ນໄມ້ຢືນຕົ້ນ</font></li>
+				<li><font size="3">建物　ຕຶກອາຄານ</font></li>
+				<li><font size="3">建物減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນຕຶກອາຄານ</font></li>
+				<li><font size="3">構築物　ອາຄານໂຄງສ້າງ, ສິ່ງປຸກສ້າງ</font></li>
+				<li><font size="3">構築物減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນອາຄານໂຄງສ້າງ</font></li>
+				<li><font size="3">機械及び装置　ເຄື່ອງຈັກ ແລະ ເຄື່ອງອຸປະກອນ</font></li>
+				<li><font size="3">機械及び装置減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນເຄື່ອງຈັກ ແລະ ເຄື່ອງອຸປະກອນ</font></li>
+				<li><font size="3">車両運搬具　ພາຫະນະຂົນສົ່ງແລະອຸປະກອນໃຊ້ໃນການຂົນສົ່ງ</font></li>
+				<li><font size="3">車両運搬具減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນລົດຂົ້ນສົ່ງແລະອຸປະກອນໃຊ້ໃນການຂົນສົ່ງ</font></li>
+				<li><font size="3">工具器具及び備品　ອຸປະກອນເຄື່ອງມື ແລະ ອຸປະກອນເສີມຕ່າງໆ</font></li>
+				<li><font size="3">工具器具及び備品減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນອຸປະກອນເຄື່ອງມື ແລະ ອຸປະກອນເສີມຕ່າງໆ</font></li>
+				<li><font size="3">リース資産　ຊັບສີນສີນເຊື່ອ, ຊັບສິນທີ່ເຊົ່າ</font></li>
+				<li><font size="3">リース資産減価償却累計額　ລວມເງິນສະສົມຫັກຄ່າຫຼຸ້ຍຫຽນຊັບສີນສີນເຊື່ອ</font></li>
+				<li><font size="3">建設仮勘定　ບັນຊີຊົ່ວຄາວການກໍ່ສ້າງ</font></li>
+				<li><font size="3">水利権　ສິດນໍາໃຊ້ນໍ້າ</font></li>
+				<li><font size="3">借地権　ສິດເຊົ່າທີ່ີດິນ</font></li>
+				<li><font size="3">地上権　ສິດນໍາໃຊ້ທີ່ດິນ</font></li>
+				<li><font size="3">特許権　ສິດລິກາສິດ</font></li>
+				<li><font size="3">長期貸付金貸倒引当金　ເງິນສໍາຮອງໄວ້ເພື່ອສະສາງໜີ້ສູນເສຍຂອງເງິນໃຫ້ກູ້ໄລຍະຍາວ</font></li>
+				<li><font size="3">破産更生債権等　ໜີ້ຟື້ນຟູການຫຼົ້ມລະລາຍອື່ນໆ</font></li>
+				<li><font size="3">破産更生債権等　ເງິນເອີ້ນເກັບເມື່ອລູກໜີ້ມີການລົ້ມລະລາຍ</font></li>
+				<li><font size="3">破産更生債権等貸倒引当金　ເງິນສໍາຮອງໄວ້ເພື່ອສະສາງໜີ້ສູນເສຍຂອງໜີ້ຟື້ນຟູການຫຼົ້ມລະລາຍອື່ນໆ</font></li>
+				<li><font size="3">基金　ເງິນພື້ນຖານ</font></li>
+				<li><font size="3">投資その他の資産減価償却累計額　ການລົງທືນ ແລະ ລວມຄ່າຫຼຸ້ຍຫຽນຊັບສົມບັດອື່ນໆ</font></li>
+				<li><font size="3">つり銭資金　ເງິນທືນໃຊ້ໄວ້ທອນ</font></li>
+				<li><font size="3">現金預金　ເງິນສົດສະສົມ </font></li>
+				<li><font size="3">未収金　ໜີ້ຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">未収金貸倒引当金　ເງິນສໍາຮອງໄວ້ເພື່ອສະສາງໜີ້ຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">貯蔵品　ວັດຖຸໃນສາງ</font></li>
+				<li><font size="3">短期貸付金貸倒引当金　ເງິນສໍາຮອງໄວ້ເພື່ອສະສາງ(ການໂຕນໜີ້)ເງິນໃຫ້ກູ້ໄລຍະສັ້ນ</font></li>
+				<li><font size="3">前払費用　ຄ່າໃຊ້ຈ່າຍລ່ວງໜ້າ</font></li>
+				<li><font size="3">前払金　ເງິນຈ່າຍລ່ວງໜ້າ</font></li>
+				<li><font size="3">立替金　ເງິນຈ່າຍຄືນໃຫ້ກັບບ້ວງທີ່ໄດ້ຈ່າຍໄປແລ້ວ</font></li>
+				<li><font size="3">仮払金　ເງິນສໍາລະຊົ່ວຄາວ</font></li>
+				<li><font size="3">未収収益　ລາຍຮັບຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">未収収益貸倒引当金　ເງິນສໍາຮອງໄວ້ເພື່ອລົບລ້າງໜີ້ລາຍຮັບຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">営業外未収金　ເງິນຍັງເກັບບໍ່ໄດ້ນອກການຄ້າ</font></li>
+				<li><font size="3">未収水道料金　ເງິນຄ່ານໍ້າປະປາທີ່ຍັງບໍ່ໄດ້ຮັບ</font></li>
+				<li><font size="3">未収原水供給料　ເງິນຮັບນໍ້າດິບຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">未収受託工事収益　ລາຍຮັບການຮັບເໝົາກໍ່ສ້າງທີ່ຍັງເກັບບໍ່ໄດ້</font></li>
+				<li><font size="3">その他営業未収金　ເງິນບໍ່ທັນເກັບໄດ້ວຽກງານການຄ້າອື່ນໆ</font></li>
+				<li><font size="3">未収受取利息　ດອກເບ້ຍທີ່ຍັງເກັບບໍ່ໄດ້</font></li>
+				<li><font size="3">未収補助金　ເງິນອຸດນູນບໍ່ທັນໄດ້</font></li>
+				<li><font size="3">未払事務費　ຄ່າບໍລິຫານຫ້ອງການຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">未払　ຄ້າງຈ່າຍ</font></li>
+				<li><font size="3">預り保証金　ເງິນຄໍາປະກັນເງິນຝາກ</font></li>
+				<li><font size="3">担保預り金　ເງິນຝາກຫຼັກປະກັນ</font></li>
+				<li><font size="3">繰入資本金　ເງິນທືນໂອນເຂົ້າມາ</font></li>
+				<li><font size="3">組入資本金　ເງິນທືນແບ່ງເຂົ້າມາ</font></li>
+				<li><font size="3">再評価積立金　ເງິນສະສົມປະເມີນຄືນ</font></li>
+				<li><font size="3">減債積立金　ເງິນສະສົມຫຼຸດລົງ</font></li>
+				<li><font size="3">Bleeding 　ການເຍີ້ມນໍ້າ</font></li>
+				<li><font size="3">Laitance 　ຝ້ານໍ້າປູນ</font></li>
+				<li><font size="3">透明性  ຄວາມໂປ່ງໃສ　</font></li>
+				<li><font size="3">国会議員　ສະມາຊິກສະພາ　</font></li>
+				<li><font size="3">大統領政府高官　ເຈົ້າໜ້າທີ່ລະດັບສູງຂອງລັດຖະບານ　</font></li>
+				<li><font size="3">国家顧問　ທີປຶກສາຂອງລັດ</font></li>
+				<li><font size="3">無償案件　ໂຄງການຊ່ວຍເຫຼືອລ້າ</font></li>
+				<li><font size="3">郡都　ຈຸດສຸມ</font></li>
+				<li><font size="3">不採算エリアへの　　ເຂດບໍ່ສ້າງລາຍຮັບ</font></li>
+				<li><font size="3">仕組み　ກົນໄກ,ໂຄງສ້າງ</font></li>
+				<li><font size="3">関係省庁　ກະຊວງທີ່ກ່ຽວຂ້ອງ</font></li>
+				<li><font size="3">優先課題　ບັນຫາບຸລິດມະສິດຫຼັກ</font></li>
+				<li><font size="3">法整備　ດ້ານນິຕິກຳ</font></li>
+				<li><font size="3">教訓  ບົດຮຽນທີ່ຖອດຖອນໄດ້</font></li>
+				<li><font size="3">良好な環境と課題　　ສະພາບແວດລ້ອມທີ່ເອື້ອອຳນວຍແລະຂໍ້ຄົງຄ້າງ</font></li>
+				<li><font size="3">溶存酸素量(DO)    ປະລິມານອົກຊີທີ່ລະລາຍໃນນ້ຳ</font></li>
+				<li><font size="3">化学的酸素要求量(COD) 　ຄວາມຕ້ອງການອົກຊີທາງເຄມີ</font></li>
+				<li><font size="3">補償　ການທົດແທນຄ່າເສຍຫາຍຄືນ</font></li>
+				<li><font size="3">曝気（エアレーション）　ການຕື່ມອາກາດໃນນ້ຳ</font></li>
+				<li><font size="3">ジレンマ　dilemma ພາວະທີ່ກຣືນບໍ່ເຂົ້າຄາຍບໍ່ອອກ</font></li>
+				<li><font size="3">準拠　ສອດຄ່ອງ</font></li>
+				<li><font size="3">貧困から脱出する　ຫຼຸດພົ້ນຈາກຄວາມທຸກຍາກ</font></li>
+				<li><font size="3">開発の拠点及び地方地域　ເຂດຈຸດສຸມພັດທະນາ ແລະ ຊົນນະບົດ</font></li>
+				<li><font size="3">大臣官房　ສໍານັກງານລັດຖະມົນຕີ</font></li>
+				<li><font size="3">逓増型の水道料金体系　ໂຄງສ້າງລາຄານໍ້າແບບຄິດໄລ່ເປັນຂັ້ນ</font></li>
+				<li><font size="3">最低賃金　ຄ່າແຮງຂັ້ນຕໍ່າ</font></li>
+				<li><font size="3">損益分岐点　ຈຸດຄຸ້ມທຶນ</font></li>
+				<li><font size="3">共謀　ສົມຮູ້ຮ່ວມຄິດ</font></li>
+				<li><font size="3">水源保護地域　ເຂດສະຫງວນແຫລ່ງນໍ້າທໍາມະຊາດ</font></li>
+				<li><font size="3">先延ばし　ຜັດວັນປະກັນພຸ່ງ, ຖ່ວງເວລາ</font></li>
+				<li><font size="3">大臣合意　ຂໍ້ຕົກລົງລັດຖະມົນຕີ</font></li>
+				<li><font size="3">繰延収益　ລາຍຮັບລໍຕັດບັນຊີ(deferred revenue)</font></li>
+				<li><font size="3">企業債　ຫຸ້ນກູ້ຂອງບໍລິສັດ</font></li>
+				<li><font size="3">剰余金　ເງິນສ່ວນເກີນ</font></li>
+				<li><font size="3">資本剰余金合計　ສ່ວນເກີນທຶນທັງໝົດ</font></li>
+				<li><font size="3">利益剰余金　ກໍາໄລສະສົມ</font></li>
+				<li><font size="3">建設改良積立金　ເງິນສະສົມສໍາລັບປັບປຸງສິ່ງອໍານວຍຄວາມສະດວກ</font></li>
+				<li><font size="3">当年度未処分利益剰余金　ກໍາໄລສະສົມທີ່ຍັງບໍ່ໄດ້ຈັດສັນສຳລັບປີປັດຈຸບັນ</font></li>
+				<li><font size="3">前年度繰越利益剰余金　ກໍາໄລສະສົມຍົກຍອດຈາກປີກ່ອນ(ກໍາໄລສຸດທິປີນີ້ + ກໍາໄລສະສົມ - ເງິນສໍາລັບປັນຜົນໃຫ້ຜູ້ຖືຮຸ້ນ - ເງິນແຮກໍາໄລ - ເງິນແຮແຍກໄວ້ຕ່າງຫາກ)</font></li>
+				<li><font size="3">その他未処分利益剰余金変動額　ຈໍານວນການປ່ຽນແປງຂອງກໍາໄລສະສົມອື່ນໆທີ່ບໍ່ທັນໄດ້ຄິດໄລ່</font></li>
+				<li><font size="3">造林補助金　ເງິນອຸດໜູນຈາກການປູກປ່າ</font></li>
+				<li><font size="3">未収金の増加額　ໜີ້ຕ້ອງຮັບທີ່ເພິ່ມຂຶ້ນ</font></li>
+				<li><font size="3">未払金の増加額　ໜີ້ຕ້ອງສົ່ງທີ່ເພິ່ມຂຶ້ນ</font></li>
+				<li><font size="3">前払費用の減少額　ຄ່າໃຊ້ຈ່າຍລ່ວງໜ້າທີ່ຫຼຸດລົງ</font></li>
+				<li><font size="3">前受金の増加額　ເງິນຮັບລ່ວງໜ້າທີ່ເພີ່ມຂຶ້ນ</font></li>
+				<li><font size="3">前受収益の増加額　ລາຍຮັບລ່ວງໜ້າທີ່ເພີ່ມຂຶ້ນ</font></li>
+				<li><font size="3">引当金　ເງິນອຸດໜູນ</font></li>
+				<li><font size="3">投資その他の資産の売却による収入　ລາຍຮັບຈາກການຂາຍຊັບສິນອື່ນໆທີ່ລົງທຶນ</font></li>
+				<li><font size="3">他事業体からの出資の回収による収入　ລາຍຮັບຈາກການເກັບເງິນລົງທຶນຈາກອົງກອນອື່ນໆ</font></li>
+				<li><font size="3">基金取崩による収入　ລາຍຮັບຈາກການຖອນເງິນຈາກກອງທຶນ</font></li>
+				<li><font size="3">基金積立による支出　ລາຍຈ່າຍຈາກການສະສົມເງິນເຂົ້າກອງທຶນ</font></li>
+				<li><font size="3">短期貸付による支出　ລາຍຈ່າຍຈາກການໃຫ້ກູ້ຢືມໄລຍະສັ້ນ</font></li>
+				<li><font size="3">短期貸付の回収による収入　ລາຍຮັບຈາກການເກັບກູ້ຄືນເງິນກູ້ໄລຍະສັ້ນ</font></li>
+				<li><font size="3">建設改良費の財源に充てるための企業債　ຫຸ້ນກູ້ຂອງບໍລິສັດເພື່ອໃຊ້ເປັນແຫຼ່ງທຶນສໍາລັບໃຊ້ຈ່າຍໃນການກໍ່ສ້າງ ແລະ ປັບປຸງ</font></li>
+				<li><font size="3">建設改良費の財源に充てるための企業債の償還による支出　ລາຍຈ່າຍຈາກການຊໍາລະຫຸ້ນກູ້ຂອງບໍລິສັດເພື່ອໃຊ້ເປັນແຫຼ່ງທຶນສໍາລັບໃຊ້ຈ່າຍໃນການກໍ່ສ້າງ ແລະ ປັບປຸງ</font></li>
+				<li><font size="3">出資　ການອອກເງິນທຶນ</font></li>
+				<li><font size="3">リース債務　ພັນທະສັນຍາເຊົ່າ</font></li>
+				<li><font size="3">資金期首残高　ຍອດທຶນຄົງເຫຼືອໄລຍະຕົ້ນ</font></li>
+				<li><font size="3">資金期末残高　ຍອດທຶນຄົງເຫຼືອໄລຍະທ້າຍ</font></li>
+				<li><font size="3">業務活動によるキャッシュ・フロー　ກະເເສເງິນສົດຈາກການເຄື່ອນໄຫວທຸລະກິດ</font></li>
+				<li><font size="3">投資活動によるキャッシュ・フロー　ກະເເສເງິນສົດຈາກກິດຈະກໍາການລົງທຶນ</font></li>
+				<li><font size="3">財務活動によるキャッシュ・フロー　ກະແສເງິນສົດກິດຈະກໍາການເງິນ</font></li>
+				<li><font size="3">憲法　ລັດຖະທຳມະນູນ　constitution</font></li>
+				<li><font size="3">法律 / 法典　ກົດໝາຍ / ປະມວນກົດຫມາຍ　Laws / Code</font></li>
+				<li><font size="3">国民議会決議　ມະຕິສະພາແຫ່ງຊາດ　National Assembly Resolutions</font></li>
+				<li><font size="3">国民議会常務委員会決議　ມະຕິຄະນະປະຈໍາສະພາແຫ່ງຊາດ　Standing committee of NA Resolutions</font></li>
+				<li><font size="3">国家主席令　ລັດຖະບັນຍັດປະທານປະເທດ　President Ordinance</font></li>
+				<li><font size="3">内閣令　ດຳລັດລັດຖະບານ　Government/ Cabinet Decree ※以前は首相令と呼ばれていた</font></li>
+				<li><font size="3">内閣閣議決議　ມະຕິລັດຖະບານ　Government/ Cabinet Resolutions</font></li>
+				<li><font size="3">首相の決定、命令　ຂໍ້ຕົກລົງ/ຄຳສັ່ງນາຍົກລັດຖະມົນຕີ　Prime minister Decisions / Orders</font></li>
+				<li><font size="3">大臣、国家組織の長の決定※、命令、通達　ຂໍ້ຕົກລົງ ,ຄຳສັ່ງ, ຄຳແນະນຳລັດຖະມົນຕີ　Ministers Decisions / Orders / Instructions</font></li>
+				<li><font size="3">県国民議会決議　ມະຕິກອງປະຊຸມສະພາປະຊາຊົນແຂວງ　Provincial assembly Resolutions</font></li>
+				<li><font size="3">県国民議会常務委員会決議　ມະຕິຄະນະປະຈໍາສະພາປະຊາຊົນແຂວງ　Standing Committee of Provincial assembly Resolutions</font></li>
+				<li><font size="3">県知事、都知事の　決定、命令、通達　ຂໍ້ຕົກລົງ, ຄຳສັ່ງ , ຄຳແນະນຳເຈົ້າແຂວງ／ເຈົ້າຄອງນະຄອນຫລວງວຽງຈັນ　Provincial governer Decisions, Orders, Instructions</font></li>
+				<li><font size="3">郡長、中心郡長、市長の　決定、命令、通達　ຂໍ້ຕົກລົງ, ຄຳສັ່ງ, ຄຳແນະນຳເຈົ້າເມືອງ　District chief Decisions, Orders, Instructions</font></li>
+				<li><font size="3">村の規則　ກົດລະບຽບບ້ານ　Village Regulations</font></li>
+				<li><font size="3">
+					<div>特別効力法令　ນິຕິກຳທີ່ມີຜົນບັງຄັບສະເພາະ</div>
+					</font>
+					<div>1 法律の公布に係る国家主席令、条約の批准、恩赦の決定</div>
+					<div>2 表彰、警察軍の昇進、任命、異動、又は免職、又はある特定業務に関する、国家主席令、決議、内閣令、決定又はそれ以外の法令</div>
+					<p>3 告示 今まで「通達」としている訳もありますが、上の一般効力法廷の「通達」と区別するため、告示としました。</p>
+				</li>
+				<li><font size="3">体制整備　ສ້າງ ແລະ ປັບປຸງລະບົບການຈັດຕັ້ງປະຕິບັດວຽກ</font></li>
+				<li><font size="3">視野　ທັດສະນະແນວຄິດ</font></li>
+				<li><font size="3">TAG 　Transparency Accountability Governance</font></li>
+				<li><font size="3">Transparency　透明性　ຄວາມໂປ່ງໃສ</font></li>
+				<li><font size="3">Accountability　アカウンタビリティ　ຄວາມຮັບຜິດຊອບຕໍ່ບຸກຄົນຫຼືອົງກອນ</font></li>
+				<li><font size="3">Governance　ガバナンス　ການຄຸ້ມຄອງ (ທໍາມາພິບານ)</font></li>
+				<li><font size="3">妥当性　Relevance　ຄວາມເໝາະສົມ</font></li>
+				<li><font size="3">整合性　Coherence　ຄວາມສອດຄ່ອງ</font></li>
+				<li><font size="3">有効性　Effectiveness　ປະສິດທິຜົນ</font></li>
+				<li><font size="3">効率性　Efficiency　ປະສິດທິພາບ</font></li>
+				<li><font size="3">インパクト　Impact　ຜົນກະທົບ</font></li>
+				<li><font size="3">接続性　Sustainability　ຄວາມຍືນຍົງ</font></li>
+				<li><font size="3">施策　ກໍານົດໝາຍ</font></li>
+				<li><font size="3">ToR　Term of Reference 委託条件　ຂໍ້ກໍານົດຂອງຜູ້ວ່າຈຈ້າງ</font></li>
+				<li><font size="3">官房　ຫ້ອງການກະຊວງ</font></li>
+				<li><font size="3">合理化　ຄວາມສົມເຫດສົມຜົນ</font></li>
+				<li><font size="3">耐震化率　ຄວາມທົນທານຕໍ່ແຜ່ນດິນໄຫວ</font></li>
+				<li><font size="3">未整備  ບໍ່ໄດ້ຮັບການປັບປຸງ</font></li>
+				<li><font size="3">脆弱性 　ຄວາມສ່ຽງ, ຄວາມເປາະບາງ ຊ່ອງວ່າງ</font></li>
+				<li><font size="3">推移　ການຜັນແປ, ການເໜັງຕີງ</font></li>
+				<li><font size="3">浸水　ນ້ຳຖ້ວມຂັງ</font></li>
+				<li><font size="3">誤差　ຜົນການຄິດໄລ່ທີ່ຄາດເຄື່ອນ</font></li>
+				<li><font size="3">硬直化 　ພາວະຝືດເຄື່ອງ</font></li>
+				<li><font size="3">改革する　　ການປະຕິຮູບ</font></li>
+				<li><font size="3">積立金　ເງິນທຶນສະສົມ</font></li>
+				<li><font size="3">地域特性　ລັກສະນະສະເພາະພູມສັນຖານ</font></li>
+				<li><font size="3">劣化　ການເສື່ອມສະພາບ</font></li>
+				<li><font size="3">　</font></li>
+				<li><font size="3">　</font></li>
+				<li><font size="3">　</font></li>
+
+
+		</ul>
+		<form >
+            <p>
+                <input type="button" value="Back" class="button" onclick="history.back()">
+                <!--<input type="button" value="home" class="button" onclick="location.href='../../index.html'"> -->         
+            </p>
+        </form>
+	</div>
+</main>
+<script src="assets/dist/js/bootstrap.bundle.min.js" charset="utf-8"></script>		
 </body>
 </html>
