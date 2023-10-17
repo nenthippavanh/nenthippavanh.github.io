@@ -1,47 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { computed,ref } from 'vue';
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+import listItems from './data/List.json'
+
+const datas = listItems
+const search = ref(''); // Initialize search as a reactive reference
+
+const filteredList = computed(() => {
+  return datas.list_items.filter(item => {
+    return item.toLowerCase().includes(search.value.toLowerCase());
+  });
+});
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="min-vh-100 min-vw-100 " style="font-family: Noto Sans Lao;">
+    <div class="container">
+      <div class="row">
+        <div class="">
+          <input v-model="search" placeholder="Search" class="my-4 form-control">
+          <ul class="nav" v-for="(data,index) in filteredList" :key="index">
+              <li class="nav-item">
+                  {{ data }}
+              </li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
