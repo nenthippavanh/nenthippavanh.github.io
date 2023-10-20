@@ -7,7 +7,7 @@ import WaterSupply from './WaterSupply.vue'
 </script>
 
 <template>
-    <div class="min-vh-100 min-vw-100 " style="font-family: Noto Sans Lao;">
+    <div class="min-vh-100" style="font-family: Noto Sans Lao;">
         <div class="container">
             <div class="row">
                 <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
