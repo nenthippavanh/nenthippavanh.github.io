@@ -3,6 +3,7 @@
 import Home from './Home.vue'
 import General from './General.vue'
 import WaterSupply from './WaterSupply.vue'
+const test = "test"
 
 </script>
 
@@ -21,6 +22,7 @@ import WaterSupply from './WaterSupply.vue'
                         <button class="nav-link fw-bold" id="nav-waterSupply-tab" data-bs-toggle="tab"
                             data-bs-target="#nav-waterSupply" type="button" role="tab" aria-controls="nav-waterSupply"
                             aria-selected="false">Water Supply</button>
+                            {{ test }}
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
