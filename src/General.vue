@@ -19,8 +19,8 @@ const filteredList = computed(() => {
             <div class="card-body mt-2">
                 <input v-model="search" placeholder="Search" class="my-4 form-control">
                 <div class="" v-for="(data, index) in filteredList" :key="index">
-                    <div class="bg-light border-bottom display-5">
-                        <span class="text-danger fw">{{ index }}. </span> {{ data }}
+                    <div class="border-bottom text-dark">
+                        <span class="">{{ index }}. </span> {{ data }}
                     </div>
                 </div>
             </div>
