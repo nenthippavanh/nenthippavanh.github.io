@@ -26,7 +26,7 @@ const filteredList = computed(() => {
             <div class="card-body">
                 <ul class="nav" v-for="(data, index) in filteredList" :key="index">
                     <li class="nav-item">
-                        <span class="fw-bold">{{ index }}. </span> {{ data }}
+                        <span class="">{{ index }}. </span> {{ data }}
                     </li>
                 </ul>
             </div>

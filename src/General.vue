@@ -14,14 +14,14 @@ const filteredList = computed(() => {
 </script>
 
 <template>
-    <div class="row" id="test1">
+    <div class="row">
         <div class="card shadow-lg rounded">
             <div class="card-body mt-2">
                 <input v-model="search" placeholder="Search" class="my-4 form-control">
                 <div class="" v-for="(data, index) in filteredList" :key="index">
-                    <div class="">
-                       <span class="fw-bold">{{ index }}. </span> {{ data }}
-                    </div>
+                    <h6>
+                        <span class="">{{ index }}. </span> {{ data }}
+                    </h6>
                 </div>
             </div>
         </div>
