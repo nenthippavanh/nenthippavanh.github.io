@@ -18,11 +18,11 @@ const filteredList = computed(() => {
         <div class="card shadow-lg rounded">
             <div class="card-body mt-2">
                 <input v-model="search" placeholder="Search" class="my-4 form-control">
-                <ul class="nav" v-for="(data, index) in filteredList" :key="index">
-                    <li class="nav-item">
+                <div class="" v-for="(data, index) in filteredList" :key="index">
+                    <div class="">
                        <span class="fw-bold">{{ index }}. </span> {{ data }}
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
