@@ -24,13 +24,15 @@ const filteredList = computed(() => {
                 <input v-model="search" placeholder="Search" class="form-control">
             </div>
             <div class="card-body">
-                <h4 class="text-black-50 fw-bolder fst-italic">All Word</h4>
-                <input v-model="search" placeholder="Search" class="form-control">
+                <div>
+                    {{ datas }}
+                </div> 
+                <div class="fw-bold">
+                    {{ filteredList  }}
+                </div>
             </div>
             <div class="card-body">
-                {{ filteredList }}
                 <ul class="nav" v-for="(data, index) in filteredList" :key="index">
-                    {{ data }}
                     <li class="nav-item">
                         <span class="">{{ index }}. </span> {{ data }}
                     </li>
