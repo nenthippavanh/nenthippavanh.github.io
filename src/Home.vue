@@ -24,6 +24,10 @@ const filteredList = computed(() => {
                 <input v-model="search" placeholder="Search" class="form-control">
             </div>
             <div class="card-body">
+                <h4 class="text-black-50 fw-bolder fst-italic">All Word</h4>
+                <input v-model="search" placeholder="Search" class="form-control">
+            </div>
+            <div class="card-body">
                 <ul class="nav" v-for="(data, index) in filteredList" :key="index">
                     <li class="nav-item">
                         <span class="">{{ index }}. </span> {{ data }}
