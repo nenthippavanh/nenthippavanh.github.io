@@ -17,18 +17,18 @@ const filteredList = computed(() => {
 </script>
 
 <template>
-    <div class="row" id="test1">
-        <div class="card shadow-lg rounded">
+    <div class="row">
+        <div class="card shadow-lg rounded min-vh-100">
             <div class="card-title mt-2">
                 <h4 class="text-black-50 fw-bolder fst-italic">All Word</h4>
                 <input v-model="search" placeholder="Search" class="form-control">
             </div>
-            <div class="card-body">
-                <ul class="nav" v-for="(data, index) in filteredList" :key="index">
-                    <li class="nav-item">
+            <div class="card-body mt-2">
+                <div class="" v-for="(data, index) in filteredList" :key="index">
+                    <div class="border-bottom text-dark">
                         <span class="">{{ index }}. </span> {{ data }}
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
