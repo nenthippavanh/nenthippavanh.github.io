@@ -1,34 +1,8 @@
 <script setup>
-import { computed, ref } from 'vue';
 import GeneralList from './data/GeneralList.json'
-import { normalize } from './search.js'
-
-const datas = GeneralList.list_items
-const searchKeys = datas.map(normalize)
-const search = ref(''); // Initialize search as a reactive reference
-
-const filteredList = computed(() => {
-    const query = normalize(search.value)
-    return datas.filter((item, i) => {
-        return searchKeys[i].includes(query);
-    });
-});
-
+import WordList from './components/WordList.vue'
 </script>
 
 <template>
-    <div class="row">
-        <div class="card shadow-lg rounded min-vh-100">
-            <div class="card-body mt-2 ">
-                <input v-model="search" placeholder="Search" class="my-4 form-control">
-                <div class="" v-for="(data, index) in filteredList" :key="index">
-                    <div class="border-bottom text-dark">
-                        <span class="">{{ index }}. </span> {{ data }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <WordList :items="GeneralList.list_items" />
 </template>
-
-<style scoped></style>

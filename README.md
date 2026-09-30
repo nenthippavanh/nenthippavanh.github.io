@@ -1,10 +1,13 @@
 # word list（日本語・ラオ語 単語帳）
 
 Vue 3 + Vite で作った単語帳アプリです。ビルド結果（`dist/`）を GitHub Pages で公開しています。
+デザインは Bootstrap 5.3 と Bootstrap Icons（どちらも `index.html` で CDN から読み込み）を使っています。ライト／ダークテーマはヘッダー右上のボタンで切り替えられます。
+
+公開サイト：https://nenthippavanh.github.io/dist/
 
 | タブ | 内容 | データ |
 | --- | --- | --- |
-| Home | All Word：General・Water Supply・Health Care の単語と水道用語辞典の見出し語をまとめて検索 | 下のすべて |
+| All Words | General・Water Supply・Health Care の単語と水道用語辞典の見出し語をまとめて検索 | 下のすべて |
 | General | 一般の単語 | `src/data/GeneralList.json` |
 | Water Supply | 手入力の単語 ＋ 水道用語辞典（MawaSU2、約5,100語、日本語・ラオ語・タイ語の解説付き） | `src/data/WaterSupplyList.json`、`public/water-supply/` |
 | Health Care | 保健・医療の単語 | `src/data/HealthCareList.json` |
@@ -122,7 +125,13 @@ git push
 │   └─ water-supply/              変換された水道用語辞典（自動生成）
 ├─ src/
 │   ├─ main.js                    アプリの起動
-│   ├─ App.vue                    タブ（Home / General / Water Supply / Health Care）
+│   ├─ App.vue                    ヘッダー、テーマ切替、タブ（開いているタブは URL の #general などで保持）
+│   ├─ assets/main.css            Bootstrap に追加するアプリ独自のスタイル
+│   ├─ components/
+│   │   ├─ WordList.vue           検索欄付きの単語一覧（All Words / General / Health Care で共通）
+│   │   ├─ WordItem.vue           単語1行の表示（日本語＋読み方、その下にラオ語）
+│   │   └─ WordText.vue           読み方（（ひらがな））を小さく表示する部品
+│   ├─ wordFormat.js              単語の行を「日本語／読み方／ラオ語」に分ける処理
 │   ├─ Home.vue                   All Word
 │   ├─ General.vue
 │   ├─ WaterSupply.vue            手入力の単語 ＋ 水道用語辞典
