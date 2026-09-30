@@ -1,18 +1,33 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import GeneralList from './data/GeneralList.json'
 import WaterSupplyList from './data/WaterSupplyList.json'
+import HealthCareList from './data/HealthCareList.json'
+import { loadIndex } from './waterSupplyDictionary.js'
+import { normalize } from './search.js'
 
+const PAGE_SIZE = 200
 
+const dictionaryWords = ref([])
+loadIndex()
+    .then(list => { dictionaryWords.value = list.map(e => [e.kana ? `${e.ja}（${e.kana}）` : e.ja, e.en, e.lo].join('　')) })
+    .catch(() => {}) // the Water Supply tab shows the load error
 
-const datas = (GeneralList.list_items).concat(WaterSupplyList.list_items)
+const datas = computed(() => (GeneralList.list_items).concat(WaterSupplyList.list_items, HealthCareList.list_items, dictionaryWords.value))
+const searchKeys = computed(() => datas.value.map(normalize))
 const search = ref(''); // Initialize search as a reactive reference
+const limit = ref(PAGE_SIZE)
 
 const filteredList = computed(() => {
-    return datas.filter(item => {
-        return item.toLowerCase().includes(search.value.toLowerCase());
+    const query = normalize(search.value)
+    return datas.value.filter((item, i) => {
+        return searchKeys.value[i].includes(query);
     });
 });
+
+const visibleList = computed(() => filteredList.value.slice(0, limit.value))
+
+watch(search, () => { limit.value = PAGE_SIZE })
 
 </script>
 
@@ -24,11 +39,15 @@ const filteredList = computed(() => {
                 <input v-model="search" placeholder="Search" class="form-control">
             </div>
             <div class="card-body mt-2">
-                <div class="" v-for="(data, index) in filteredList" :key="index">
+                <div class="" v-for="(data, index) in visibleList" :key="index">
                     <div class="border-bottom text-dark">
                         <span class="">{{ index }}. </span> {{ data }}
                     </div>
                 </div>
+                <button v-if="visibleList.length < filteredList.length" type="button"
+                    class="btn btn-outline-secondary my-3" @click="limit += PAGE_SIZE">
+                    Show more ({{ filteredList.length - visibleList.length }})
+                </button>
             </div>
         </div>
     </div>

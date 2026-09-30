@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "import:water-supply": "node scripts/import-water-supply.mjs"
   },
   "dependencies": {
     "vue": "^3.3.4"

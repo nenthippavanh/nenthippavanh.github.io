@@ -1,13 +1,16 @@
 <script setup>
 import { computed, ref } from 'vue';
 import GeneralList from './data/GeneralList.json'
+import { normalize } from './search.js'
 
 const datas = GeneralList.list_items
+const searchKeys = datas.map(normalize)
 const search = ref(''); // Initialize search as a reactive reference
 
 const filteredList = computed(() => {
-    return datas.filter(item => {
-        return item.toLowerCase().includes(search.value.toLowerCase());
+    const query = normalize(search.value)
+    return datas.filter((item, i) => {
+        return searchKeys[i].includes(query);
     });
 });
 
